@@ -19,6 +19,5 @@ pictures.each do |x|
   obj = s3.bucket('images-raspberrypi').object(x)
   obj.upload_file(x)
 end
-images-raspberrypi.objects
 #s3 = Aws::S3::Client.new(region: 'us-east-1')
 #s3.create_bucket(bucket: 'eventrep')
