@@ -19,22 +19,29 @@
     CB.CloudApp.init('dvxtzzsorpsn', 'b4caa12d-df76-45b0-8044-51c548df802b');
       function signup() {
         console.log("hello")
-        var obj = new CB.CloudObject('User');
+
 
         if($("#password").val()==$("#cpassword").val()){
+          var obj = new CB.CloudObject('User');
           obj.set('username', $("#username").val());
           obj.set('password', $("#password").val());
           obj.set('ProfilePic', $("#piclink").val());
           obj.set('Firstname',  $("#firstname").val())
           obj.set('Lastname',  $("#lastname").val())
+          obj.save({
+            success : function(obj){
+              console.log(obj)
+              window.location = 'signinpage.html'
+            },error : function(error){
+
+              console.log(error)
+              alert(error.msg)
+          }
+        });
         }
-        obj.save({
-          success : function(obj){
-            console.log(obj)
-          },error : function(error){
-        //error
+        else{
+          alert("Passwords do not match")
         }
-      });
 
       }
     </script>
