@@ -2,6 +2,7 @@
 <html>
   <head>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cloudboost.io/js-sdk/cloudboost.js"></script>
     <style media="screen">
     .title{
       font-family:arial;
@@ -15,18 +16,37 @@
   </head>
   <body>
     <script type="text/javascript">
+    CB.CloudApp.init('dvxtzzsorpsn', 'b4caa12d-df76-45b0-8044-51c548df802b');
       function signup() {
-        
+        console.log("hello")
+        var obj = new CB.CloudObject('User');
+
+        if($("#password").val()==$("#cpassword").val()){
+          obj.set('username', $("#username").val());
+          obj.set('password', $("#password").val());
+          obj.set('ProfilePic', $("#piclink").val());
+          obj.set('Firstname',  $("#firstname").val())
+          obj.set('Lastname',  $("#lastname").val())
+        }
+        obj.save({
+          success : function(obj){
+            console.log(obj)
+          },error : function(error){
+        //error
+        }
+      });
+
       }
     </script>
     <div class= "title"><h1><b>E</b>vent<b>R</b>ep</h1></div><br><br>
     <center><h2>Sign Up</h2><br><br>
-      <h4>Username: </h4><input class="uname" name="" value=""><br>
-      <h4>Password: </h4><input class="pword" name="" value=""><br>
-      <h4>Confirm Password: </h4><input class="cpword" name="" value=""><br>
-      <h4>Picture Link: </h4><input class="piclink" name="" value=""><br>
-      <h4>First Name: </h4><input class="fname" name="" value=""><br>
-      <h4>Last Name: </h4><input class="lname" name="" value=""><br>
-      <button onclick="signup()"></button>
+      <h4>Username: </h4><input id="username" name="" value=""><br>
+      <h4>Password: </h4><input id="password" name="" value="" type="password"><br>
+      <h4>Confirm Password: </h4><input id="cpassword" name="" value="" type="password"><br>
+      <h4>Picture Link: </h4><input id="piclink" name="" value=""><br>
+      <h4>First Name: </h4><input id="firstname" name="" value=""><br>
+      <h4>Last Name: </h4><input id="lastname" name="" value=""><br>
+
+      <button onclick="signup()">Sign Up</button>
   </body>
 </html>
