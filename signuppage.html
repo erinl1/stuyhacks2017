@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- saved from url=(0059)file:///Users/erinlee/Desktop/stuyhacks2017/signuppage.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      <link rel="stylesheet" type="text/css" href="./signuppage_files/css">
+      <link rel="stylesheet" type="text/css" href="./signuppage_files/css(1)">
+      <script src="./signuppage_files/jquery.min.js"></script>
+      <script src="./signuppage_files/users"></script>
+
+      <link rel="stylesheet" href="./signuppage_files/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="./signuppage_files/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="./signuppage_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style media="screen">
-    .title{
-      font-family:arial;
+    body {
+      background-color: #2C2D2B;
+    }
+    h1 {
+      font-family: 'Raleway Dots';
       border-radius: 10px;
-      background-color: #42ebf4;
+      font-size: 100px;
       color: white;
-      font-size: 40px;
+      text-align: center;
+    }
+    h2 {
+      font-family: 'Codystar';
+      border-radius: 10px;
+      font-size: 70px;
+      color: white;
       text-align: center;
     }
     </style>
@@ -16,17 +37,40 @@
   <body>
     <script type="text/javascript">
       function signup() {
-        
+
       }
     </script>
-    <div class= "title"><h1><b>E</b>vent<b>R</b>ep</h1></div><br><br>
-    <center><h2>Sign Up</h2><br><br>
-      <h4>Username: </h4><input class="uname" name="" value=""><br>
-      <h4>Password: </h4><input class="pword" name="" value=""><br>
-      <h4>Confirm Password: </h4><input class="cpword" name="" value=""><br>
-      <h4>Picture Link: </h4><input class="piclink" name="" value=""><br>
-      <h4>First Name: </h4><input class="fname" name="" value=""><br>
-      <h4>Last Name: </h4><input class="lname" name="" value=""><br>
-      <button onclick="signup()"></button>
-  </body>
-</html>
+      <div class="container">
+      <br>
+      <div class="title"><h1>EventREP</h1></div>
+      <h2>SIGN UP</h2>
+      <div class="row">
+      <center><div class="col-md-6 first">
+        <br>
+        <label for="uname" style="color: white"> Username</label>
+        <input style="width: 400px; height: 45px" type="text" class="form-control" id="uname" placeholder="username">
+        <br>
+        <label for="pword" style="color: white"> Password</label>
+        <input style="width: 400px; height: 45px" type="text" class="form-control" id="pword" placeholder="password">
+        <br>
+        <label for="cpword" style="color: white"> Confirm Password</label>
+        <input style="width: 400px; height: 45px" type="text" class="form-control" id="cpword" placeholder="confirm password">
+        <br>
+    </div>
+    <div class="col-md-6 ">
+      <br>
+      <label for="piclink" style="color: white"> Picture Link</label>
+      <input style="width: 400px; height: 45px" type="text" class="form-control" id="piclink" placeholder="picture link">
+      <br>
+      <label for="fname" style="color: white"> First Name</label>
+      <input style="width: 400px; height: 45px" type="text" class="form-control" id="fname" placeholder="first name">
+      <br>
+      <label for="lname" style="color: white"> Username</label>
+      <input style="width: 400px; height: 45px" type="text" class="form-control" id="lname" placeholder="last name">
+      <br>
+    </div>
+      <button onclick="signup()" style="width: 980px; height: 45px; background: #265BFF" type="button" class="btn btn-info btn-block">Sign Up</button></center><br><br>
+    </div>
+    </div>
+
+</body></html>
