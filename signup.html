@@ -1,5 +1,3 @@
-
-<!-- saved from url=(0059)file:///Users/erinlee/Desktop/stuyhacks2017/signuppage.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
       <link rel="stylesheet" type="text/css" href="./signuppage_files/css">
@@ -14,21 +12,25 @@
 
       <!-- Latest compiled and minified JavaScript -->
       <script src="./signuppage_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script src="./signuppage_files/jquery.min(1).js"></script>
-      <script src="./signuppage_files/users(1)"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src ="https://jsonplaceholder.typicode.com/users"></script>
 
-      <link rel="stylesheet" href="./signuppage_files/bootstrap.min(1).css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
       <!-- Optional theme -->
-      <link rel="stylesheet" href="./signuppage_files/bootstrap-theme.min(1).css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
       <!-- Latest compiled and minified JavaScript -->
-      <script src="./signuppage_files/bootstrap.min(2).js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</head><body>=======
-
-  
-    <script src="./signuppage_files/jquery.min(2).js"></script>
-    <script src="./signuppage_files/cloudboost.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+=======
+<html>
+  <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cloudboost.io/js-sdk/cloudboost.js"></script>
     <style media="screen">
     body {
       background-color: #2C2D2B;
@@ -48,9 +50,8 @@
       text-align: center;
     }
     </style>
-<<<<<<< HEAD
-  
-  
+  </head>
+  <body>
       <div class="container">
       <br>
       <div class="title"><h1>EventREP</h1></div>
@@ -83,53 +84,6 @@
       <button onclick="signup()" style="width: 980px; height: 45px; background: #265BFF" type="button" class="btn btn-info btn-block">Sign Up</button></center><br><br>
     </div>
     </div>
-
+</body>
 <script type="text/javascript">
-</script>
-</body></html>
-=======
-  </head>
-  <body>
-    <script type="text/javascript">
-    CB.CloudApp.init('dvxtzzsorpsn', 'b4caa12d-df76-45b0-8044-51c548df802b');
-      function signup() {
-        console.log("hello")
-
-
-        if($("#password").val()==$("#cpassword").val()){
-          var obj = new CB.CloudObject('User');
-          obj.set('username', $("#username").val());
-          obj.set('password', $("#password").val());
-          obj.set('ProfilePic', $("#piclink").val());
-          obj.set('Firstname',  $("#firstname").val())
-          obj.set('Lastname',  $("#lastname").val())
-          obj.save({
-            success : function(obj){
-              console.log(obj)
-              window.location = 'signinpage.html'
-            },error : function(error){
-
-              console.log(error)
-              alert(error.msg)
-          }
-        });
-        }
-        else{
-          alert("Passwords do not match")
-        }
-
-      }
-    </script>
-    <div class= "title"><h1><b>E</b>vent<b>R</b>ep</h1></div><br><br>
-    <center><h2>Sign Up</h2><br><br>
-      <h4>Username: </h4><input id="username" name="" value=""><br>
-      <h4>Password: </h4><input id="password" name="" value="" type="password"><br>
-      <h4>Confirm Password: </h4><input id="cpassword" name="" value="" type="password"><br>
-      <h4>Picture Link: </h4><input id="piclink" name="" value=""><br>
-      <h4>First Name: </h4><input id="firstname" name="" value=""><br>
-      <h4>Last Name: </h4><input id="lastname" name="" value=""><br>
-
-      <button onclick="signup()">Sign Up</button>
-  </body>
-</html>
->>>>>>> origin/master
+</script></html>
