@@ -31,15 +31,15 @@
     -webkit-animation-delay: 1.5s;
     animation: slide 0.5s forwards;
     animation-delay: 2s;
-}
+  }
 
-@-webkit-keyframes slide {
+  @-webkit-keyframes slide {
     100% { left: 50 ; }
-}
+  }
 
-@keyframes slide {
+  @keyframes slide {
     100% { left: 0; }
-}
+  }
   body {
     background-color: #2C2D2B;
     background-size: 50;
@@ -54,40 +54,37 @@
   .img {
     right: 50px;
   }
-  .title {
-    margin-top: 70px;
-  }
   </style>
   <title></title>
 </head>
 <body>
   <div class = "container">
     <div class = "col-md-7">
-    <div class = "row">
+      <div class = "row">
         <br>
         <br>
         <h1 class = "title" id = "title">EventREP</h1>
-      <div class = "row">
-        <div class = "img">
-          <img style = "height: 275px; width: 375px; margin-top: 140px; margin-left: 80px" src = 'checkuncheck.gif'>
+        <div class = "row">
+          <div class = "img">
+            <img style = "height: 275px; width: 375px; margin-top: 20%; margin-left: 10%" src = 'checkuncheck.gif'>
+          </div>
         </div>
       </div>
     </div>
+    <div class = "col-md-5">
+      <br><br><br><br><br><br>
+      <center>
+        <label class = "words" for="Name" style = "color: white"> Username</label>
+        <input style = "width: 400px; height: 45px"type="text" class="form-control" id="name" placeholder="username">
+        <br>
+        <label class = "words" for="Password" style = "color: white"> Password</label>
+        <input style = "width: 400px; height: 45px"type="text" class="form-control" id="name" placeholder="password">
+        <br><br>
+        <button style = "width: 200px; height: 45px; background: 265BFF" type="button" class="btn btn-primary">Log in</button><br><br>
+        <a style = "color: #F14545" href = "signuppage.html">Don't have an account? Sign Up Here</a>
+      </center>
+    </div>
   </div>
-  <div class = "col-md-5">
-    <br><br><br><br><br><br>
-    <center>
-      <label class = "words" for="Name" style = "color: white"> Username</label>
-    <input style = "width: 400px; height: 45px"type="text" class="form-control" id="name" placeholder="username">
-    <br>
-    <label class = "words" for="Password" style = "color: white"> Password</label>
-    <input style = "width: 400px; height: 45px"type="text" class="form-control" id="name" placeholder="password">
-    <br><br>
-    <button style = "width: 200px; height: 45px; background: 265BFF" type="button" class="btn btn-primary">Log in</button><br><br>
-    <a style = "color: #F14545" href = "signuppage.html">Don't have an account? Sign Up Here</a>
-    </center>
-  </div>
-</div>
 </body>
 <script>
 </script>
