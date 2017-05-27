@@ -14,15 +14,15 @@
 
 <script>
 function myFunction() {
-  let url="https://api-us.faceplusplus.com/facepp/v3/compare/"
+  let url="https://api-us.faceplusplus.com/facepp/v3/compare"
   //let string1="image_url1=https://www.impan.pl/website/var/assets/uzytkownicy/zdjecia/stettner_lukasz.jpg";
   //let string2="image_url2=https://www.us.edu.pl/sites/www.us.edu.pl/files/images/IMG_8999.jpg"
   $.post(url,
       {
         api_key: "PdnVsQ_k9seM32R0600VW1hS_mGjOmMY",
         api_secret: "SmWZkTJl80JpLWiSeQMf8LDqDl_hc1qW",
-        image_url1: "https://www.impan.pl/website/var/assets/uzytkownicy/zdjecia/stettner_lukasz.jpg",
-        image_url2: "https://www.us.edu.pl/sites/www.us.edu.pl/files/images/IMG_8999.jpg"
+        image_url1: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Press_secretary_Sean_Spicer.jpg",
+        image_url2: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/000/0cd/08b/2306053.jpg"
       },
       function(data){
           console.log(data);
