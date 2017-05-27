@@ -6,6 +6,7 @@ AWS::S3::Base.establish_connection!(
   :access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
   :secret_access_key => ENV['AWS_SECRET_KEY']
 )
+#USE FIRST TIME
 #s3 = Aws::S3::Client.new(region: 'us-east-2')
 #s3.create_bucket(bucket: 'images-raspberrypi')
 
