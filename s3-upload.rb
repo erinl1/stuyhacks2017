@@ -10,7 +10,7 @@ AWS::S3::Base.establish_connection!(
 #s3 = Aws::S3::Client.new(region: 'us-east-2')
 #s3.create_bucket(bucket: 'images-raspberrypi')
 
-pictures = ['raspberry.jpg','pie.jpg']
+pictures = ['raspberry.jpg','mascot.png','pie.jpg']
 pictures.each do |x|
   s3 = Aws::S3::Resource.new(region:'us-east-2')
   obj = s3.bucket('images-raspberrypi').object(x)
