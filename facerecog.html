@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<style>
+.card {
+    width: 250px;
+    height: 325px;
+
+}
+</style>
+<body onload="myFunction()">
+
+
+
+<script>
+function myFunction() {
+  let url="https://api-us.faceplusplus.com/facepp/v3/compare/"
+  //let string1="image_url1=https://www.impan.pl/website/var/assets/uzytkownicy/zdjecia/stettner_lukasz.jpg";
+  //let string2="image_url2=https://www.us.edu.pl/sites/www.us.edu.pl/files/images/IMG_8999.jpg"
+  $.post(url,
+      {
+        api_key: "PdnVsQ_k9seM32R0600VW1hS_mGjOmMY",
+        api_secret: "SmWZkTJl80JpLWiSeQMf8LDqDl_hc1qW",
+        image_url1: "https://www.impan.pl/website/var/assets/uzytkownicy/zdjecia/stettner_lukasz.jpg",
+        image_url2: "https://www.us.edu.pl/sites/www.us.edu.pl/files/images/IMG_8999.jpg"
+      },
+      function(data){
+          console.log(data);
+      });
+
+
+}
+/*
+curl -X POST "https://api-us.faceplusplus.com/facepp/v3/compare" \
+-F "api_key=PdnVsQ_k9seM32R0600VW1hS_mGjOmMY" \
+-F "api_secret=SmWZkTJl80JpLWiSeQMf8LDqDl_hc1qW" \
+-F "image_url1=https://www.impan.pl/website/var/assets/uzytkownicy/zdjecia/stettner_lukasz.jpg" \
+-F "image_url2=https://www.us.edu.pl/sites/www.us.edu.pl/files/images/IMG_8999.jpg"
+*/
+</script>
+
+
+</body>
+</html>
