@@ -37,7 +37,7 @@
 
       </select>
     <button id="find" onclick="search()">Find User</button>
-  
+    <div id="profilecontent"></div>
   <script>
     CB.CloudApp.init('rxnvavlehqbk', '7b60ca2f-d29c-4e34-a5db-b0bac146694d');
     function search(){
@@ -48,7 +48,8 @@
         query.equalTo(querytype,searchparam);
       query.find({
         success: function(list){
-          console.log(list)
+          let currentuser=list[0]
+          $("#profilecontent").append(currentuser.get("Firstname")+" "+currentuser.get("Lastname")+"<br>"+currentuser.get("email")+"<br><img src='"+currentuser.get("ProfilePic")+"'/>")
         },
        error: function(err) {
   //Error in retrieving the data.
