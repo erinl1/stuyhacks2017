@@ -87,7 +87,7 @@ var user = new CB.CloudUser('User');
         success : function(obj){
           console.log(obj)
           $("#msg").append("<h3><font color='white'>Your Account Has Been Saved. You will be redirected to the sign in page in 5 seconds.</font></h3>")
-          setTimeout(function(){ window.location = 'splash.html' }, 50000);
+          setTimeout(function(){ window.location = 'splash.html' }, 5000);
 
 
         },error : function(error){
