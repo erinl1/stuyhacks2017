@@ -18,6 +18,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
   integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
   crossorigin="anonymous"></script>
+  <script src="https://cloudboost.io/js-sdk/cloudboost.js"></script>
   <style>
   .words {
     font-family:'Raleway Dots';
@@ -84,17 +85,36 @@
       <br><br><br><br><br><br>
       <center>
         <label class = "words" for="Name" style = "color: white"> Username</label>
-        <input style = "width: 400px; height: 45px"type="text" class="form-control" id="name" placeholder="username">
+        <input style = "width: 400px; height: 45px"type="text" class="form-control" id="username" placeholder="username">
         <br>
         <label class = "words" for="Password" style = "color: white"> Password</label>
-        <input style = "width: 400px; height: 45px"type="text" class="form-control" id="name" placeholder="password">
-        <br><br>
-        <button type="button" class="btn btn-primary button">Log in</button><br><br>
+        <input style = "width: 400px; height: 45px"type="password" class="form-control" id="password" placeholder="password">
+
+        <br><h5 id="passwordmsg" style="color:#F14545;"></h5><br>
+        <button type="button" class="btn btn-primary button" onclick="signin()">Log in</button><br><br>
         <a style = "color: #F14545" href = "signup.html">Don't have an account? Sign Up Here</a>
       </center>
     </div>
   </div>
 </body>
 <script>
+CB.CloudApp.init('rxnvavlehqbk', '7b60ca2f-d29c-4e34-a5db-b0bac146694d');
+  function signin() {
+    $("#passwordmsg").empty();
+    let username=$("#username").val();
+    let password=$("#password").val();
+    var user = new CB.CloudUser();
+      user.set('username', username);
+      user.set('password', password);
+      user.logIn({
+        success: function(user) {
+          window.location="home.html"
+        },
+        error: function(err) {
+          $("#passwordmsg").append("Username and Password are incorrect or do not match")
+        }
+      });
+  }
+
 </script>
 </html>
