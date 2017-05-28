@@ -20,12 +20,12 @@ function myFunction() {
 $.get("links.json",function(data){
       console.log(data)
     
-  })
+ 
   $.post(url,
       {
         api_key: "PdnVsQ_k9seM32R0600VW1hS_mGjOmMY",
         api_secret: "SmWZkTJl80JpLWiSeQMf8LDqDl_hc1qW",
-        image_url1: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Press_secretary_Sean_Spicer.jpg",
+        image_url1: data.links[data.links.length-2],
         image_url2: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/000/0cd/08b/2306053.jpg"
       },
       function(data){
@@ -34,6 +34,7 @@ $.get("links.json",function(data){
 
 
 }
+})
 /*
 curl -X POST "https://api-us.faceplusplus.com/facepp/v3/compare" \
 -F "api_key=PdnVsQ_k9seM32R0600VW1hS_mGjOmMY" \
