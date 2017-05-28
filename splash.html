@@ -98,7 +98,18 @@
   </div>
 </body>
 <script>
+
 CB.CloudApp.init('rxnvavlehqbk', '7b60ca2f-d29c-4e34-a5db-b0bac146694d');
+var query = new CB.CloudQuery("User");
+  query.equalTo('username', "Mario");
+  query.search({
+    success: function(data) {
+      console.log(data[0].get("ProPic"))
+    },
+    error: function(err) {
+      //$("#passwordmsg").append("Username and Password are incorrect or do not match")
+    }
+  });
   function signin() {
     $("#passwordmsg").empty();
     let username=$("#username").val();
