@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <script src="https://cloudboost.io/js-sdk/cloudboost.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    body{
+      background-color: #2c2b2d;
+    }
+    </style>
   </head>
   <body>
-    <h1>Profile</h1>
-    
-  </body>
+    <nav class="navbar navbar-default" style="color:#2c2b2d">
+      <div class="container-fluid" style="color:#2c2b2d">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="mainwindow.html">EventREP</a>
+        </div>
+
+
+      </div>
+    </nav>
+
+    <h1 style="color:white">Profile</h1>
+      <input id="search" placeholder="search for user"/>
+      <!---<ul class="dropdown-menu">
+        <li value="username">Username</li>
+        <li value="email">Email</li>
+        <li value="name">Name</li>
+      </ul>--->
+      <select class="selectpicker" id="querytype">
+        <option value="username">Username</option>
+        <option value="email">Email</option>
+
+      </select>
+    <button id="find" onclick="search()">Find User</button>
+    <h3><div style="color:white" id="profilecontent"></div></h3>
+  <script>
+    CB.CloudApp.init('rxnvavlehqbk', '7b60ca2f-d29c-4e34-a5db-b0bac146694d');
+    function search(){
+      let querytype=$("#querytype").val()
+      
+      let searchparam=$("#search").val();
+      var query = new CB.CloudQuery('User');
+        query.equalTo(querytype,searchparam);
+      query.find({
+        success: function(list){
+          let currentuser=list[0]
+          console.log("<img src='"+currentuser.get("ProfilePic")+"'/>")
+          $("#profilecontent").append(currentuser.get("Firstname")+" "+currentuser.get("Lastname")+"<br>"+currentuser.get("email")+"<br><img src='"+currentuser.get("ProfilePic")+"'/>")
+        },
+       error: function(err) {
+  //Error in retrieving the data.
+        }
+    });  
+        
+    }
+    </script>
+
+</body>
 </html>
