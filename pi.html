@@ -1,0 +1,59 @@
+<html>
+<style>
+table {
+  margin-left: 40%;
+  margin-top: 10%;
+}
+</style>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<table class="columns">
+  <tr>
+    <td><div id="absence" style="border: 1px solid #ccc"></div></td>
+    <td><div id="lateness" style="border: 1px solid #ccc"></div></td>
+  </tr>
+  <tr>
+  </tr>
+</table>
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(absenceChart);
+
+function absenceChart() {
+  //put in numbers instead of 11 and 2!!
+  var data = google.visualization.arrayToDataTable([
+    ['Status', 'Number of Hours'],
+    ['Hours Present',     11],
+    ['Hours Absent',      2],
+  ]);
+
+  var options = {
+    title: 'Percentage of the Time at the Event'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('absence'));
+
+  chart.draw(data, options);
+}
+
+
+google.charts.setOnLoadCallback(latenessChart);
+
+function latenessChart() {
+  //put in numbers instead of 11 and 2!!
+  var data = google.visualization.arrayToDataTable([
+    ['Status', 'Number of Times'],
+    ['Times on Time',     11],
+    ['Times late',      2],
+  ]);
+
+  var options = {
+    title: 'Amount of events on Time'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('lateness'));
+  chart.draw(data, options);
+
+}
+</script>
+</html>
