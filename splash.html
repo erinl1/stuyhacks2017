@@ -22,6 +22,15 @@
   .words {
     font-family:'Raleway Dots';
   }
+  .button {
+    width: 200px;
+    height: 45px;
+    background: #265BFF;
+    }
+  .button:hover {
+  background-color: #000000; /* Green */
+  color: white;
+}
   #title {
     position: absolute;
     left: -700px;
@@ -66,7 +75,7 @@
         <h1 class = "title" id = "title">EventREP</h1>
         <div class = "row">
           <div class = "img">
-            <img style = "height: 275px; width: 375px; margin-top: 20%; margin-left: 10%" src = 'checkuncheck.gif'>
+            <img style = "height: 275px; width: 375px; margin-top: 20%; margin-left: 10%" src = 'check.gif'>
           </div>
         </div>
       </div>
@@ -80,8 +89,8 @@
         <label class = "words" for="Password" style = "color: white"> Password</label>
         <input style = "width: 400px; height: 45px"type="text" class="form-control" id="name" placeholder="password">
         <br><br>
-        <button style = "width: 200px; height: 45px; background: 265BFF" type="button" class="btn btn-primary">Log in</button><br><br>
-        <a style = "color: #F14545" href = "signuppage.html">Don't have an account? Sign Up Here</a>
+        <button type="button" class="btn btn-primary button">Log in</button><br><br>
+        <a style = "color: #F14545" href = "signup.html">Don't have an account? Sign Up Here</a>
       </center>
     </div>
   </div>
