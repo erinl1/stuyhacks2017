@@ -119,7 +119,7 @@ var query = new CB.CloudQuery("User");
       user.set('password', password);
       user.logIn({
         success: function(user) {
-          window.location="home.html"
+          window.location="profile.html"
         },
         error: function(err) {
           $("#passwordmsg").append("Username and Password are incorrect or do not match")

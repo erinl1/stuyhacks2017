@@ -1,65 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src ="https://jsonplaceholder.typicode.com/users"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
-    <style>
-    .button { /* Green */
-    border: none;
-    color: black;
-    padding: 10px 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    }
-    </style>
-    <title></title>
-  </head>
-  <body>
-    <div class = "container">
-      <div class="form-group">
-        <div class="col-md-4">
-          <br><br>
-          <input class = "button" type="file" onchange="previewFile()"><br>
-          <img src="" height="200" alt="Image preview...">
-        </div>
-        <div class = "col-md-8">
-        <br><br>
-        <label for="Name"> Username</label>
-        <input type="text" class="form-control" id="name" placeholder="username">
-        <label for="Password"> Password</label>
-        <input type="text" class="form-control" id="name" placeholder="password">
-    </div>
-  </body>
+  <script src="https://cloudboost.io/js-sdk/cloudboost.js"></script>
+  <link rel="stylesheet" type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway+Dots">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script>
-    function previewFile(){
-        var preview = document.querySelector('img'); //selects the query named img
-        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
-        var reader  = new FileReader();
+  google.charts.load('current', {'packages':['timeline']});
+   google.charts.setOnLoadCallback(drawChart);
 
-        reader.onloadend = function () {
-            preview.src = reader.result;
-        }
+   function drawChart() {
+     var data = google.visualization.arrayToDataTable([
+       ['Status', 'Start Time', 'End Time'],
+       ['Full Time',
+        new Date(2017, 5, 27, 8, 30),
+        new Date(2017, 5, 28, 12, 00)],
+       ['Time Actually Spent',
+        new Date(2017, 5, 27, 9, 15),
+        new Date(2017, 5, 27, 18, 00)],
+        ['Time Actually Spent',
+         new Date(2017, 5, 27, 18, 30),
+         new Date(2017, 5, 28, 12, 00)],
+     ]);
 
-        if (file) {
-            reader.readAsDataURL(file); //reads the data as a URL
-        } else {
-            preview.src = "";
-        }
+     var options = {
+       height: 450,
+     };
+
+     var chart = new google.visualization.Timeline(document.getElementById('chart_div'));
+
+     chart.draw(data, options);
    }
-   previewFile();
   </script>
+  <style>
+  body {
+    background-color: #2c2b2d;
+  }
+  #profilecontent {
+    font-family: "Raleway Dots";
+  }
+  a {
+    font-family: "Raleway Dots";
+    font-size: 200px;
+    color: white;
+  }
+  </style>
+</head>
+<body>
+  <div class = "container">
+  <center><a href="mainwindow.html" style = "font-size: 100px">EventREP</a></center>
+    <h1 style="color:white; font-family: 'Raleway Dots'">Profile</h1>
+    <div class = "row">
+    <div class = "col-md-4">
+    <input type="text" id = "search" style= "width: 200px; height:40px"class="form-control" placeholder="Search for user">
+    <br>
+          <span class="input-group-btn"></span>
+  <select class="selectpicker" id="querytype">
+    <option value="username">Username</option>
+    <option value="email">Email</option>
+  </select>
+  <button id="find" class = "btn" style = "width: 100px; height: 40px"onclick="search()">Find User</button>
+  <h4><div style="color:white; margin-top: 10%" id="profilecontent"></div></h4>
+</div>
+<div class = "col-md-8">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <h2 style = "color: white">Event One</h2>
+    <div id="chart_div"></div>
+</div>
+</div>
+</div>
+<script>
+CB.CloudApp.init('rxnvavlehqbk', '7b60ca2f-d29c-4e34-a5db-b0bac146694d');
+function search(){
+  let querytype=$("#querytype").val()
+
+  let searchparam=$("#search").val();
+  var query = new CB.CloudQuery('User');
+  query.equalTo(querytype,searchparam);
+  query.find({
+    success: function(list){
+      let currentuser=list[0]
+      console.log(currentuser)
+            console.log(currentuser.get("ProPic"))
+      console.log("<img src='"+currentuser.get("ProfilePic")+"'/>")
+      $("#profilecontent").append(currentuser.get("Firstname")+" "+currentuser.get("Lastname")+"<br>"+currentuser.get("email")+"<br><br><img class = 'img-circle' style = 'width: 120px; 120px' src='"+currentuser.get("ProfilePic")+"'/>")
+    },
+    error: function(err) {
+      //Error in retrieving the data.
+    }
+  });
+
+}
+</script>
+
+</body>
 </html>
