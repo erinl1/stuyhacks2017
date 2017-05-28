@@ -4,8 +4,8 @@ require 'aws/s3'
 require 's3'
 Dotenv.load
 AWS::S3::Base.establish_connection!(
-  :access_key_id     => ENV['AWS_ACCESS_KEY_ID'],
-  :secret_access_key => ENV['AWS_SECRET_KEY']
+  :access_key_id     => 'AKIAJUGG2UVKNVEQF5SQ',
+  :secret_access_key => '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',
 )
 #USE FIRST TIME
 #s3 = Aws::S3::Client.new(region: 'us-east-2')
