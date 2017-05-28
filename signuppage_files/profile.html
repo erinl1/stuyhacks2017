@@ -25,19 +25,24 @@
     </nav>
 
     <h1 style="color:white">Profile</h1>
-      <input id="search" placeholder="search for user"></input>
+      <input id="search" placeholder="search for user"/>
       <!---<ul class="dropdown-menu">
         <li value="username">Username</li>
         <li value="email">Email</li>
         <li value="name">Name</li>
       </ul>--->
-      <select class="selectpicker">
+      <select class="selectpicker" id="querytype">
         <option value="username">Username</option>
         <option value="email">Email</option>
         <option value="name">Name</option>
       </select>
+    <button id="find" onclick="search()">Find User</button>
   
-
+  <script>
+    function search(){
+      console.log($("#querytype").val(),$("#search").val());
+    }
+    </script>
 
 </body>
 </html>
