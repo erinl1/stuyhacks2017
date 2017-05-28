@@ -34,13 +34,27 @@
       <select class="selectpicker" id="querytype">
         <option value="username">Username</option>
         <option value="email">Email</option>
-        <option value="name">Name</option>
+
       </select>
     <button id="find" onclick="search()">Find User</button>
   
   <script>
+    CB.CloudApp.init('rxnvavlehqbk', '7b60ca2f-d29c-4e34-a5db-b0bac146694d');
     function search(){
-      console.log($("#querytype").val(),$("#search").val());
+      let querytype=$("#querytype").val()
+      
+      let searchparam=$("#search").val();
+      var query = new CB.CloudQuery('User');
+        query.equalTo(querytype,searchparam);
+      query.find({
+        success: function(list){
+          console.log(list)
+        },
+       error: function(err) {
+  //Error in retrieving the data.
+        }
+    });  
+        
     }
     </script>
 
