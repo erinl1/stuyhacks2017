@@ -49,6 +49,7 @@
       query.find({
         success: function(list){
           let currentuser=list[0]
+          console.log("<img src='"+currentuser.get("ProfilePic")+"'/>")
           $("#profilecontent").append(currentuser.get("Firstname")+" "+currentuser.get("Lastname")+"<br>"+currentuser.get("email")+"<br><img src='"+currentuser.get("ProfilePic")+"'/>")
         },
        error: function(err) {
